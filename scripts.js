@@ -50,7 +50,7 @@ function loadTasks() {
 }
 
 function fetchNews() {
-    fetch("https://newsapi.org/v2/top-headlines?country=us&apiKey=a00d2070e3e44b38ba9b2cecf0b9f6cb")
+    fetch("https://gnews.io/api/v4/top-headlines?lang=en&token=64238933ec119bb632237370a19816e2")
         .then(response => response.json())
         .then(data => {
             let newsList = document.getElementById("newsList");
@@ -59,10 +59,10 @@ function fetchNews() {
                 let li = document.createElement("li");
                 li.innerHTML = `
                     <div class="news-item">
-                        <img src="${article.urlToImage || 'placeholder.jpg'}" alt="News Image">
+                        <img src="${article.image}" alt="News Image">
                         <div class="news-content">
                             <a href="${article.url}" target="_blank">${article.title}</a>
-                            <p>${article.description || 'No description available.'}</p>
+                            <p>${article.description}</p>
                         </div>
                     </div>
                 `;
