@@ -90,3 +90,54 @@ li {
     font-size: 0.9em;
     color: black
 }
+
+/* Default styles are for larger screens */
+
+/* 📱 Small Screens (Phones) */
+@media screen and (max-width: 768px) {
+    body {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .container, .sidebar {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    .news-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .news-item img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* 📏 Medium Screens (Tablets) */
+@media screen and (max-width: 1024px) {
+    body {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container, .sidebar {
+        width: 90%;
+    }
+}
+
+/* 🖥️ Large Screens (Desktops) */
+@media screen and (min-width: 1025px) {
+    .container {
+        width: 60%;
+    }
+
+    .sidebar {
+        width: 30%;
+    }
+}
+
